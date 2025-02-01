@@ -49,12 +49,35 @@ const Navbar = () => {
                 </a>
               </div>
               {/* end::logo */}
+
               {/* start::desktop navbar*/}
               <nav className="lg:flex items-center gap-8 hidden ">
-                <ul className="flex items-center justify-between gap-8">
-                  <li>Solutions</li>
-                  <li>Services</li>
-                  <li>About Us</li>
+                <ul className="flex items-center justify-between gap-5 text-base">
+                  <li className="cursor-pointer group relative px-6 py-3">
+                    <div className="flex items-center gap-1">
+                      <span>Solutions</span>
+                      <span>
+                        <ChevronDown
+                          size={20}
+                          className={cn(
+                            "text-xs duration-150 transition-all",
+                            isLanguageOpen ? "rotate-180" : ""
+                          )}
+                        />
+                      </span>
+                    </div>
+                    <div className="group-hover:block hidden p-4 pb-0 absolute top-10 min-w-52 left-0 bg-slate-50 text-accent-foreground rounded">
+                      <ul className="space-y-2">
+                        <li className="hover:text-blue-500">AnyCaas</li>
+                        <hr />
+                        <li className="hover:text-blue-500">AnyBaas</li>
+                        <hr />
+                        <li className="hover:text-blue-500">AnyPaas</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li className=" px-6 py-3">Services</li>
+                  <li className=" px-6 py-3">About Us</li>
                 </ul>
 
                 {/* language */}
