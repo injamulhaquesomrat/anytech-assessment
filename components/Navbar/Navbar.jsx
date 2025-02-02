@@ -57,7 +57,7 @@ const Navbar = () => {
             <div className="flex items-center justify-between">
               {/* start::logo */}
               <div>
-                <a className={cn(isTop ? "block" : "hidden")} href="/">
+                <a className={cn(isTop ? "block" : "lg:hidden")} href="/">
                   <Image
                     className="h-auto w-[134px] lg:w-[170px] object-contain py-8"
                     src="images/logo.svg"
@@ -66,7 +66,7 @@ const Navbar = () => {
                     height={100}
                   />
                 </a>
-                <a className={cn(isTop ? "hidden" : "block")} href="/">
+                <a className={cn("hidden",isTop ? "hidden" : "lg:block")} href="/">
                   <Image
                     className="h-auto w-[134px] lg:w-[170px] object-contain py-8"
                     src="images/blue-logo.svg"
