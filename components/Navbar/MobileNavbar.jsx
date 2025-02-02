@@ -14,7 +14,7 @@ const MobileNavbar = ({
   return (
     <nav
       className={cn(
-        "lg:hidden bg-[#1B76E9] text-white relative duration-300 transition-all ease-in-out",
+        "lg:hidden bg-[#1B76E9] text-white absolute w-full duration-300 transition-all ease-in-out",
         isNavOpen ? "right-0" : "right-[1200px]"
       )}
     >
