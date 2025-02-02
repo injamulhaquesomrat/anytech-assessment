@@ -1,5 +1,6 @@
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
+import "@splidejs/splide/css";
 
 const interFont = Inter({
   variable: "--font-inter",

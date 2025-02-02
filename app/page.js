@@ -1,3 +1,4 @@
+import Features from "@/components/Features/Features";
 import Footer from "@/components/Footer/Footer";
 import Hero from "@/components/Hero/Hero";
 import HighLight from "@/components/HighLight/HighLight";
@@ -12,6 +13,7 @@ export default function Home() {
         <Hero />
         <HighLight />
         <Philosophy />
+        <Features/>
         <Footer />
       </main>
     </div>

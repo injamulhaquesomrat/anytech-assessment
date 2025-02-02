@@ -13,7 +13,9 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-
+.at-shadow {
+  filter: drop-shadow(rgba(207, 233, 247, 0.47) 0px 16px 21px);
+}
 
 @layer base {
   :root {
