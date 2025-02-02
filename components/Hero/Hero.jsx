@@ -14,18 +14,18 @@ const Hero = () => {
               <h1 className="text-[56px] lg:text-[80px] font-semibold leading-tight font-montserrat  max-w-2xl xl:max-w-3xl">
                 Embrace the future of finance
               </h1>
-              <h5 className="text-base font-semibold mt-4 max-w-lg xl:max-w-xl">
+              <h5 className="text-base font-semibold mt-4 max-w-xl lg:max-w-lg xl:max-w-xl">
                 Reimagine financial services with AnyTech&apos;s open platform,
                 distributed banking solution that powers transformation
               </h5>
             </header>
-            <div className="bg-[#FE8B53] text-white rounded shadow mt-8 w-full lg:w-fit ">
+            <div className="bg-[#FE8B53] text-white rounded shadow mt-8 w-full lg:w-fit group max-w-xl">
               <Link
-                className="flex px-10 py-3.5 justify-center items-center leading-tight"
+                className="flex px-10 py-3.5 justify-center items-center leading-tight gap-2"
                 href={"/"}
               >
                 <span className="text-lg font-semibold">Reach Out to Us</span>
-                <ChevronRight size={20} />
+                <ChevronRight size={20} className="group-hover:translate-x-2 duration-200 transition-all"/>
               </Link>
             </div>
           </div>

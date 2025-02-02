@@ -91,7 +91,7 @@ const DesktopNavbar = ({ isLanguageOpen, handleOpenLanguage, isTop }) => {
             <span className="mr-auto uppercase leading-tight">EN</span>
             <ChevronDown
               size={14}
-              className={cn("text-xs", isLanguageOpen ? "" : "rotate-180")}
+              className={cn("text-xs", isLanguageOpen ? "rotate-180" : "")}
             />
           </PopoverTrigger>
           <PopoverContent className="border rounded text-base px-2 py-0 w-fit">
