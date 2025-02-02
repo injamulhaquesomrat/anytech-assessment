@@ -78,7 +78,7 @@ const MobileNavbar = ({
                   : "max-h-0 opacity-0"
               )}
             >
-              <ul className="space-y-2 py-2 pl-8 uppercase">
+              <ul className="space-y-2 py-2 pl-[22px] uppercase">
                 <li>English</li>
                 <li>Thai</li>
                 <li>Bahasa Indonesia</li>

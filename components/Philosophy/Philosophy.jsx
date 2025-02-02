@@ -101,7 +101,7 @@ const Philosophy = () => {
             >
               {philosophySpecItems.map((item) => (
                 <SplideSlide
-                  className="flex items-center justify-center"
+                  className="grid"
                   key={item?.name}
                 >
                   <PhilosophySpecItem
