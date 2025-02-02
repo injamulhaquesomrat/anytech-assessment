@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="bg-[#1F80f0] lg:bg-black/10 text-white">
+      <header className="bg-[#1F80f0] lg:bg-transparent text-white">
         <div>
           <Container>
             <div className="flex items-center justify-between">

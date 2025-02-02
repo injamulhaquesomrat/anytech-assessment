@@ -7,7 +7,7 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <>
-      <section className="lg:absolute max-h-[90vh] lg:max-h-[calc(100vh)] top-0 left-0 z-0 h-screen w-full bg-[radial-gradient(59.82%_121.73%_at_-9.66%_130.31%,_#00e9ea_0%,_#1f80f0_52.08%,_#005bc4_100%)] [clip-path:polygon(0_0,_100%_0,_100%_81%,_0%_100%)] overflow-x-hidden text-white pt-[30%] md:pt-[20%] lg:pt-0">
+      <section className="max-h-[90vh] lg:max-h-[calc(100vh)] top-0 left-0 z-0 h-screen w-full bg-[radial-gradient(59.82%_121.73%_at_-9.66%_130.31%,_#00e9ea_0%,_#1f80f0_52.08%,_#005bc4_100%)] [clip-path:polygon(0_0,_100%_0,_100%_81%,_0%_100%)] overflow-x-hidden text-white pt-[30%] md:pt-[20%] lg:pt-0">
         <Container>
           <div className="flex flex-col justify-center lg:h-[100vh] relative z-[100] max-w-[672px]">
             <header>
