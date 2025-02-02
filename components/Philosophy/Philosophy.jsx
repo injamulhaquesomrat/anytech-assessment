@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import Container from "../global/Container";
 import Image from "next/image";
 import PhilosophySpecItem from "./PhilosophySpecItem";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 const philosophySpecItems = [
   {
@@ -78,16 +81,51 @@ const Philosophy = () => {
             height={1067}
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {philosophySpecItems.map((item) => (
-            <PhilosophySpecItem
-            key={item?.name}
-              icon={item?.icon}
-              name={item?.name}
-              info={item?.info}
-            />
-          ))}
-        </div>
+        <>
+          <div className="md:hidden">
+            <Splide
+              options={{
+                type: "slide",
+                drag: "free",
+                snap: true,
+                perPage: 1.5,
+                pagination: false,
+                arrows: false,
+                mediaQuery: "min",
+                focus: "center",
+                breakpoints: {
+                  480: { perPage: 2, gap: "1rem", arrows: false },
+                  640: { perPage: 3, gap: "2rem", arrows: false },
+                },
+              }}
+            >
+              {philosophySpecItems.map((item) => (
+                <SplideSlide
+                  className="flex items-center justify-center"
+                  key={item?.name}
+                >
+                  <PhilosophySpecItem
+                    key={item?.name}
+                    icon={item?.icon}
+                    name={item?.name}
+                    info={item?.info}
+                  />
+                </SplideSlide>
+              ))}
+            </Splide>
+          </div>
+
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {philosophySpecItems.map((item) => (
+              <PhilosophySpecItem
+                key={item?.name}
+                icon={item?.icon}
+                name={item?.name}
+                info={item?.info}
+              />
+            ))}
+          </div>
+        </>
       </Container>
     </div>
   );

@@ -6,8 +6,8 @@ const Features = () => {
   return (
     <section className="py-10">
       <Container>
-        <p className="section-motto text-center">TECHNOLOGY BUILT FOR YOU</p>
-        <h2 className="section-title text-center">The future of finance</h2>
+        <p className="section-motto text-center pb-4 md:pb-6">TECHNOLOGY BUILT FOR YOU</p>
+        <h2 className="section-title text-center pb-6">The future of finance</h2>
         <FeaturesSlider />
       </Container>
       <div className="w-full">

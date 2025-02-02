@@ -7,9 +7,14 @@ const FeaturesSliderItem = ({ slide }) => {
       <div className="basis-1/2">
         <p className="section-motto">{slide?.title}</p>
         <h4 className="section-title text-[40px] py-8">{slide?.headline}</h4>
-        <strong className="text-sm md:text-base leading-snug text-[#164377]">{slide?.strongText}</strong>
+        <strong className="text-sm md:text-base leading-snug text-[#164377]">
+          {slide?.strongText}
+        </strong>
         <br />
-        <p className="text-sm md:text-base leading-snug text-[#164377]">{slide?.text}</p>
+        <br />
+        <p className="text-sm md:text-base leading-snug text-[#164377]">
+          {slide?.text}
+        </p>
       </div>
       <div className="basis-1/2 rounded-lg overflow-hidden aspect-video lg:aspect-[377/425] xl:aspect-square h-[425px]">
         <Image

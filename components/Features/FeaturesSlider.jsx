@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import Splide from "@splidejs/splide";
-import "@splidejs/splide/css";
 import FeaturesSliderItem from "./FeaturesSliderItem";
 
 const slides = [
@@ -53,9 +52,12 @@ export default function FeaturesSlider() {
       const splide = new Splide(splideRef.current, {
         type: "slide",
         perPage: 1,
-        pagination: false,
+        // pagination: false,
         arrows: false,
         gap: "1rem",
+        breakpoints: {
+          768: { pagination: false },
+        },
       }).mount();
 
       setSplideInstance(splide);
@@ -90,10 +92,12 @@ export default function FeaturesSlider() {
             {slides.map((slide) => (
               <li
                 key={slide.id}
-                style={{ filter: "drop-shadow(rgba(207, 233, 247, 0.47) 0px 16px 21px)" }}
+                style={{
+                  filter:
+                    "drop-shadow(rgba(207, 233, 247, 0.47) 0px 16px 21px)",
+                }}
                 className="splide__slide bg-white rounded-lg p-6 lg:p-16"
               >
-                
                 <FeaturesSliderItem slide={slide} />
               </li>
             ))}
