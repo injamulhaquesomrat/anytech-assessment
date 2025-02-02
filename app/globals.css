@@ -13,6 +13,8 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -76,5 +78,14 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .section-motto {
+    @apply font-montserrat text-[#1B76E9] uppercase font-bold tracking-wide text-xs lg:text-base;
+  }
+  .section-title {
+    @apply font-montserrat text-[#0b305b] font-semibold text-[32px] lg:text-[56px] leading-[1.125];
   }
 }
