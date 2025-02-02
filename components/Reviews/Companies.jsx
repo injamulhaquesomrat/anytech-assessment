@@ -104,7 +104,7 @@ const Companies = () => {
         </Splide>
       </div>
       {/* for desktop  */}
-      <div className="md:grid grid-cols-3 gap-4 hidden mt-16 lg:mt-32">
+      <div className="md:grid grid-cols-3 lg:grid-cols-5 gap-4 hidden mt-16 lg:mt-32">
         {companies.map((company) => (
           <div className="flex items-center justify-center" key={company?.id}>
             <Image src={company?.img} alt="company" width={200} height={200} />

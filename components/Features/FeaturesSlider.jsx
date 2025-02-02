@@ -55,6 +55,7 @@ export default function FeaturesSlider() {
         // pagination: false,
         arrows: false,
         gap: "1rem",
+        mediaQuery:"min",
         breakpoints: {
           768: { pagination: false },
         },
@@ -69,9 +70,9 @@ export default function FeaturesSlider() {
   }, []);
 
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto feature-slider">
       {/* Tabs */}
-      <div className="md:flex justify-center gap-4 py-8 flex-wrap hidden ">
+      <div className="lg:flex justify-center gap-4 py-8 flex-wrap hidden ">
         {slides.map((slide, index) => (
           <button
             key={slide.id}

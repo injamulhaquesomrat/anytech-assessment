@@ -38,6 +38,7 @@ const Footer = () => {
                   src="https://cdn.sanity.io/images/6jywt20u/production/13baec705b693635850a77c8d13a26ba9e2318c4-14x15.svg?w=320&fm=webp"
                   height={24}
                   width={26}
+                  alt="linkedIn"
                 />
               </Link>
               <Link href="/">
@@ -45,6 +46,7 @@ const Footer = () => {
                   src="https://cdn.sanity.io/images/6jywt20u/production/4c3113a756fa8bc9ce8c8878e1361d5287f99c6a-17x18.svg"
                   height={24}
                   width={26}
+                  alt="call"
                 />
               </Link>
               <Link href="/">
@@ -52,6 +54,7 @@ const Footer = () => {
                   src="https://cdn.sanity.io/images/6jywt20u/production/2cc1280badc532d4adb15fbfed7307e1c5c7696a-16x12.svg"
                   height={24}
                   width={26}
+                  alt="email"
                 />
               </Link>
             </div>
