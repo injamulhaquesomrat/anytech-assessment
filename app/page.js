@@ -4,6 +4,7 @@ import Hero from "@/components/Hero/Hero";
 import HighLight from "@/components/HighLight/HighLight";
 import Navbar from "@/components/Navbar/Navbar";
 import Philosophy from "@/components/Philosophy/Philosophy";
+import Reviews from "@/components/Reviews/Reviews";
 
 export default function Home() {
   return (
@@ -13,7 +14,8 @@ export default function Home() {
         <Hero />
         <HighLight />
         <Philosophy />
-        <Features/>
+        <Features />
+        <Reviews />
         <Footer />
       </main>
     </div>
