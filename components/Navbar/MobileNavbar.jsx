@@ -25,7 +25,7 @@ const MobileNavbar = ({
               <div className="flex items-center justify-between cursor-pointer">
                 <span>Solutions</span>
                 <ChevronDown
-                  size={20}
+                  size={14}
                   className={cn(
                     "text-xs duration-150 transition-all",
                     isOpenSolutions ? "rotate-180" : ""
@@ -57,12 +57,12 @@ const MobileNavbar = ({
               onClick={handleOpenLanguage}
             >
               <span>
-                <Globe size={20} className="text-xs" />
+                <Globe size={14} className="text-xs" />
               </span>
               <span className="mr-auto uppercase">English</span>
               <span>
                 <ChevronDown
-                  size={20}
+                  size={14}
                   className={cn(
                     "text-xs duration-150 transition-all",
                     isLanguageOpen ? "rotate-180" : ""
@@ -94,7 +94,7 @@ const MobileNavbar = ({
             <div className="inline-flex items-center justify-between font-semibold group cursor-pointer">
               <span>Contact Us</span>
               <ChevronRight
-                size={20}
+                size={14}
                 className="group-hover:translate-x-1.5 duration-150"
               />
             </div>

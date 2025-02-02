@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../global/Container";
 import Image from "next/image";
 import { ChevronDown, ChevronRight, Globe, Menu, X } from "lucide-react";
@@ -10,9 +10,30 @@ import MobileNavbar from "./MobileNavbar";
 import DesktopNavbar from "./DesktopNavbar";
 
 const Navbar = () => {
-  const [isNavOpen, setIsNavOpen] = React.useState(false);
-  const [isOpenSolutions, setIsOpenSolutions] = React.useState(false);
-  const [isLanguageOpen, setIsLanguageOpen] = React.useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isOpenSolutions, setIsOpenSolutions] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+
+  const [isVisible, setIsVisible] = useState(true);
+  const [isTop, setIsTop] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Hide navbar when scrolling down, show when scrolling up
+      setIsVisible(currentScrollY < lastScrollY || currentScrollY < 10);
+
+      // Change color when scrolling
+      setIsTop(currentScrollY < 10);
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const handleOpenSolutions = () => {
     setIsOpenSolutions(!isOpenSolutions);
@@ -25,14 +46,18 @@ const Navbar = () => {
   };
 
   return (
-    <>
+    <div
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      } ${isTop ? "bg-transparent" : "bg-white shadow-lg"} `}
+    >
       <header className="bg-[#1F80f0] lg:bg-transparent text-white">
         <div>
           <Container>
             <div className="flex items-center justify-between">
               {/* start::logo */}
               <div>
-                <a href="/">
+                <a className={cn(isTop ? "block" : "hidden")} href="/">
                   <Image
                     className="h-auto w-[134px] lg:w-[170px] object-contain py-8"
                     src="images/logo.svg"
@@ -41,23 +66,47 @@ const Navbar = () => {
                     height={100}
                   />
                 </a>
+                <a className={cn(isTop ? "hidden" : "block")} href="/">
+                  <Image
+                    className="h-auto w-[134px] lg:w-[170px] object-contain py-8"
+                    src="images/blue-logo.svg"
+                    alt="AnyTech Blue Logo"
+                    width={100}
+                    height={100}
+                  />
+                </a>
               </div>
               {/* end::logo */}
 
               {/* start::desktop navbar*/}
-              <DesktopNavbar isLanguageOpen={isLanguageOpen} />
+              <DesktopNavbar
+                isLanguageOpen={isLanguageOpen}
+                handleOpenLanguage={handleOpenLanguage}
+                isTop={isTop}
+              />
 
               <Link
                 href="/"
-                className="border rounded px-3.5 py-2 hidden lg:flex justify-center group hover:bg-white"
+                className={cn(
+                  "border rounded px-6 py-3 hidden lg:flex justify-center group hover:bg-white",
+                  isTop
+                    ? "border-white text-white"
+                    : "border-tranparent text-white bg-[#FE8B53]"
+                )}
               >
-                <div className="inline-flex items-center justify-between font-semibold group cursor-pointer ">
-                  <span className="text-lg group-hover:text-blue-500">
+                <div className="inline-flex items-center justify-between font-semibold group cursor-pointer gap-1">
+                  <span
+                    className={cn(
+                      "text-lg group-hover:text-blue-500 leading-snug"
+                    )}
+                  >
                     Contact Us
                   </span>
                   <ChevronRight
                     size={20}
-                    className="group-hover:translate-x-1.5 duration-150 group-hover:text-blue-500"
+                    className={cn(
+                      "group-hover:translate-x-1.5 duration-150 group-hover:text-blue-500"
+                    )}
                   />
                 </div>
               </Link>
@@ -81,7 +130,7 @@ const Navbar = () => {
         isNavOpen={isNavOpen}
         isLanguageOpen={isLanguageOpen}
       />
-    </>
+    </div>
   );
 };
 

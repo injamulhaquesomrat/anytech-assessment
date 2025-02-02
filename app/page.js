@@ -7,9 +7,7 @@ import Philosophy from "@/components/Philosophy/Philosophy";
 export default function Home() {
   return (
     <div className="font-[family-name:var(--font-inter)] ">
-      <div className="sticky top-0 z-50">
-        <Navbar />
-      </div>
+      <Navbar />
       <main>
         <Hero />
         <HighLight />
